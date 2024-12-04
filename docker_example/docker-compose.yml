@@ -7,7 +7,7 @@ services:
     ports:
       - "7860:7860"
     environment:
-      - LANGFLOW_DATABASE_URL=postgres://postgres:R14V1ATysmZ4Mptzh3SmeKvoVqY6CegJfqJ0JptuUlmSY36z4bL7e2WmL9JiMTnY@rgoggwkg8sosw8o0cwsc4s0o:5432/postgres
+      - LANGFLOW_DATABASE_URL=postgres://postgres:R14V1ATysmZ4Mptzh3SmeKvoVqY6CegJfqJ0JptuUlmSY36z4bL7e2WmL9JiMTnY@74.208.237.199:5433/langflow
       # This variable defines where the logs, file storage, monitor data and secret keys are stored.
     volumes:
       - langflow-data:/app/langflow
