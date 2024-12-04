@@ -6,25 +6,11 @@ services:
     pull_policy: always               # set to 'always' when using 'latest' image
     ports:
       - "7860:7860"
-    depends_on:
-      - postgres
     environment:
-      - LANGFLOW_DATABASE_URL=postgresql://langflow:langflow@postgres:5433/langflow
+      - LANGFLOW_DATABASE_URL=postgres://postgres:R14V1ATysmZ4Mptzh3SmeKvoVqY6CegJfqJ0JptuUlmSY36z4bL7e2WmL9JiMTnY@74.208.237.199:5433/langflow
       # This variable defines where the logs, file storage, monitor data and secret keys are stored.
     volumes:
       - langflow-data:/app/langflow
 
-  postgres:
-    image: postgres:16
-    environment:
-      POSTGRES_USER: langflow
-      POSTGRES_PASSWORD: langflow
-      POSTGRES_DB: langflow
-    ports:
-      - "5433:5433"
-    volumes:
-      - langflow-postgres:/var/lib/postgresql/data
-
 volumes:
-  langflow-postgres:
   langflow-data:
